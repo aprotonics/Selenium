@@ -1,4 +1,5 @@
 import time
+import asyncio
 import unittest
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
