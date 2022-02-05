@@ -1,0 +1,63 @@
+1643977921615	geckodriver	INFO	Listening on 127.0.0.1:52066
+1643978141284	geckodriver	INFO	Listening on 127.0.0.1:51161
+1643978144366	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51162" "-no-remote" "-profile" "C:\\Users\\A4F7~1\\AppData\\Local\\Temp\\rust_mozprofileTJF2Hm"
+1643978145171	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\\u0410\u043D\u0434\u0440\u0435\u0439\\AppData\\Local\\Temp\\rust_mozprofileTJF2Hm\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51162/devtools/browser/3fa5c2fc-a718-4608-a942-17569d863e00
+1643978150153	Marionette	INFO	Listening on port 51170
+1643978150541	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+1643978151445	Marionette	WARN	Ignoring event 'DOMContentLoaded' because document has an invalid readyState of 'complete'.
+1643978178419	Marionette	INFO	Stopped listening on port 51170
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1643978182203	geckodriver	INFO	Listening on 127.0.0.1:51246
+1643978185223	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51247" "-no-remote" "-profile" "C:\\Users\\A4F7~1\\AppData\\Local\\Temp\\rust_mozprofile7BidEr"
+1643978185980	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\\u0410\u043D\u0434\u0440\u0435\u0439\\AppData\\Local\\Temp\\rust_mozprofile7BidEr\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51247/devtools/browser/e9b22d3c-7ff2-4056-8959-d5d7fc82653b
+1643978190428	Marionette	INFO	Listening on port 51253
+1643978190955	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://app.ecwid.com/script.js?59965088&data_platform=startersite_v2, line 1357: unreachable code after return statement
+JavaScript warning: https://app.ecwid.com/script.js?59965088&data_platform=startersite_v2, line 1625: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 11: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1643978569932	Marionette	INFO	Stopped listening on port 51253
+console.warn: TopSitesFeed: Failed to fetch data from Contile server: NetworkError when attempting to fetch resource.
+JavaScript error: chrome://remote/content/marionette/cert.js, line 55: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICertOverrideService.setDisableAllSecurityChecksAndLetAttackersInterceptMyData]
+1643978604683	geckodriver	INFO	Listening on 127.0.0.1:51610
+1643978607734	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51611" "-no-remote" "-profile" "C:\\Users\\A4F7~1\\AppData\\Local\\Temp\\rust_mozprofile8VgBEv"
+1643978608404	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\\u0410\u043D\u0434\u0440\u0435\u0439\\AppData\\Local\\Temp\\rust_mozprofile8VgBEv\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51611/devtools/browser/d2957ff0-b586-4017-abc1-76d99c2c6125
+1643978613141	Marionette	INFO	Listening on port 51617
+1643978613591	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://app.ecwid.com/script.js?59965088&data_platform=startersite_v2, line 1357: unreachable code after return statement
+JavaScript warning: https://app.ecwid.com/script.js?59965088&data_platform=startersite_v2, line 1625: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 11: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1643978646281	Marionette	INFO	Stopped listening on port 51617
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5A0007,name=PHttpChannel::Msg_RemoveCorsPreflightCacheEntry) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][MessageChannel] Error: (msgtype=0x5A0008,name=PHttpChannel::Msg_DeletingChannel) Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+
+###!!! [Child][RunMessage] Error: Channel closing: too late to send/recv, messages will be lost
+
+1643978712404	geckodriver	INFO	Listening on 127.0.0.1:51808
+1643978715445	mozrunner::runner	INFO	Running command: "C:\\Program Files\\Mozilla Firefox\\firefox.exe" "--marionette" "--remote-debugging-port" "51809" "-no-remote" "-profile" "C:\\Users\\A4F7~1\\AppData\\Local\\Temp\\rust_mozprofileVL3Vyx"
+1643978716100	Marionette	INFO	Marionette enabled
+console.warn: SearchSettings: "get: No settings file exists, new profile?" (new NotFoundError("Could not open the file at C:\\Users\\\u0410\u043D\u0434\u0440\u0435\u0439\\AppData\\Local\\Temp\\rust_mozprofileVL3Vyx\\search.json.mozlz4", (void 0)))
+DevTools listening on ws://localhost:51809/devtools/browser/fe858a66-838c-4171-9554-82813ee553d9
+1643978720723	Marionette	INFO	Listening on port 51817
+1643978720794	RemoteAgent	WARN	TLS certificate errors will be ignored for this session
+JavaScript warning: https://app.ecwid.com/script.js?59965088&data_platform=startersite_v2, line 1357: unreachable code after return statement
+JavaScript warning: https://app.ecwid.com/script.js?59965088&data_platform=startersite_v2, line 1625: unreachable code after return statement
+JavaScript warning: https://mc.yandex.ru/metrika/tag.js, line 11: WEBGL_debug_renderer_info is deprecated in Firefox and will be removed. Please use RENDERER.
+1643978749377	Marionette	INFO	Stopped listening on port 51817
+JavaScript error: , line 0: TypeError: ServiceWorker script at https://buy-in-10-seconds.company.site/service-worker.js for scope https://buy-in-10-seconds.company.site/ encountered an error during installation.
