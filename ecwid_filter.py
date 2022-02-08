@@ -1,5 +1,4 @@
 import time
-import asyncio
 import unittest
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service
@@ -19,17 +18,21 @@ from selenium.webdriver.common.keys import Keys
 URL = "https://buy-in-10-seconds.company.site/search"
 
 
-@unittest.skip
+# @unittest.skip
 class TestFilterChrome(unittest.TestCase):
     def setUp(self):
         options = webdriver.ChromeOptions()
         options.add_argument("--start-maximized")
         # options.add_argument("--headless")
         options.add_argument('--ignore-certificate-errors')
-        service=Service(ChromeDriverManager().install())
+        options.add_argument("--remote-debugging-port=9222")
+
+        # For Chrome
+        # service=Service(ChromeDriverManager().install())
 
         # For Chromium
         service=Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
+
         driver = webdriver.Chrome(service=service, options=options)
 
         # driver.maximize_window()
@@ -140,17 +143,19 @@ class TestFilterChrome(unittest.TestCase):
     def tearDown(self):
         self.driver.quit()
 
-# @unittest.skip
+@unittest.skip
 class TestFilterFirefox(unittest.TestCase):
     def setUp(self):
         options = webdriver.FirefoxOptions()
         options.add_argument("--start-maximized")
         # options.add_argument("--headless")
         options.add_argument('--ignore-certificate-errors')
+
         service=Service(GeckoDriverManager().install())
+
         driver = webdriver.Firefox(service=service, options=options)
 
-        # driver.maximize_window()
+        driver.maximize_window()
         driver.get(URL)
         driver.implicitly_wait(10)
         self.driver = driver
