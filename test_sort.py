@@ -25,8 +25,6 @@ prices_fields_selector = 'div.grid-product__price-value'
 product_sort_selector = '#ec-products-sort'
 
 
-
-
 # @unittest.skip
 class TestFilterChrome(unittest.TestCase):
     def setUp(self):
@@ -142,7 +140,7 @@ class TestFilterFirefox(unittest.TestCase):
         time.sleep(1)
 
         # create a new array of names and compare arrays
-        titles_fields_new = driver.find_elements(By.CSS_SELECTOR, titles_fields_new_selector)
+        titles_fields_new = driver.find_elements(By.CSS_SELECTOR, titles_fields_selector)
         titles_new = []
         for title_field in titles_fields_new:
             title = title_field.text
