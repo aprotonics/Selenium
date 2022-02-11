@@ -27,29 +27,42 @@ async function tovar_page() {
 }
 
 
-async function cart_page() {
-  email_input = await document.querySelector(email_input_selector)
-  email_input.value = 'test@mail.ru';
-  await email_input.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true }));
-  await email_input.dispatchEvent(new KeyboardEvent('keypress', { bubbles: true }));
-  await email_input.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true }));
-  await email_input.dispatchEvent(new Event('input', { bubbles: true }));
-  await email_input.dispatchEvent(new Event('change', { bubbles: true })); 
+function cart_page() {
+  let email_input
 
-  checkbox_agree = await document.querySelector(checkbox_agree_selector)
-  await checkbox_agree.click()
+  function findEmailInput() {
+    email_input = document.querySelector(email_input_selector)
+    if (email_input) {
+      clearInterval(timerId)
+      fillCartPage()
+    }
+  }
 
-  let promise = new Promise((resolve, reject) => {
-      setTimeout(() => resolve("готово!"), 1000)
-    });
+  async function fillCartPage() {
+    email_input.value = 'test@mail.ru';
+    await email_input.dispatchEvent(new KeyboardEvent('keydown', { bubbles: true }));
+    await email_input.dispatchEvent(new KeyboardEvent('keypress', { bubbles: true }));
+    await email_input.dispatchEvent(new KeyboardEvent('keyup', { bubbles: true }));
+    await email_input.dispatchEvent(new Event('input', { bubbles: true }));
+    await email_input.dispatchEvent(new Event('change', { bubbles: true })); 
 
-  let result = await promise
+    checkbox_agree = await document.querySelector(checkbox_agree_selector)
+    await checkbox_agree.click()
 
-  place_order_button = await document.querySelector(place_order_button_selector)
-  await place_order_button.click()
+    let promise = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("готово!"), 1000)
+      });
+
+    let result = await promise
+
+    place_order_button = await document.querySelector(place_order_button_selector)
+    await place_order_button.click()
+  }
+    
+  let timerId = setInterval(findEmailInput, 400);  
 }
 
-
+//Add awaiting name_input appearance
 async function checkout_page() {
   name_input = await document.querySelector(name_input_selector)
   name_input.value = 'test'
@@ -93,7 +106,7 @@ async function checkout_page() {
   await place_order_button2.click()
 }
 
-
+//Add awaiting thanks_for_order_block appearance
 async function assert_page() {
   thanks_for_order_block = await document.querySelector(thanks_for_order_block_selector)
   thanks_for_order_text = thanks_for_order_block.textContent
@@ -118,12 +131,6 @@ async function run() {
   let time = performance.now();
 
   await tovar_page()
-
-  let promise = new Promise((resolve, reject) => {
-      setTimeout(() => resolve("готово!"), 1000)
-    });
-
-  let result = await promise
 
   await cart_page()
 
