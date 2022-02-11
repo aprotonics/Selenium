@@ -1,3 +1,6 @@
+search_button_selector = '#static-html a.footer__link--all-products'
+product_prices_selector = '.grid__products .grid-product .grid-product__price-value'
+
 to_cart_button_selector = '.details-product-purchase__add-buttons > div:nth-child(2) > button.form-control__button'
 cart_icon_selector = '.float-icons__icon--cart > .ec-cart-widget > .ec-minicart'
 email_input_selector = '#ec-cart-email-input'
@@ -27,6 +30,24 @@ async function fillInput(input, value) {
   await input.dispatchEvent(new Event('input', { bubbles: true }));
   await input.dispatchEvent(new Event('change', { bubbles: true }));
 }
+
+async function main_page() {
+  search_button = await document.querySelector(search_button_selector)
+  await search_button.click()
+}
+
+async function search_page() {
+  product_prices = await document.querySelectorAll(product_prices_selector)
+  for (i = 0; i < product_prices.length; i++) {
+    price = parseFloat(product_prices[i].textContent.split("$")[1])
+    console.log(price)
+    if (price == 0.00) {
+      product_prices[i].click()
+      break
+    } 
+  }
+}
+
 
 async function tovar_page() {
   to_cart_button = await document.querySelector(to_cart_button_selector)
@@ -122,6 +143,10 @@ function assert_page(time) {
 async function run() {
   let time = performance.now();
 
+  await main_page()
+
+  await search_page()
+
   await tovar_page()
 
   await cart_page()
@@ -133,7 +158,7 @@ async function run() {
 
 run()
 
-// Стартовать с главной страницы!!!
+// Доделать search_page!!!
 // Добавить проверку заказа через API https://api-docs.ecwid.com/reference/get-order
 // Исправить названия на CamelCase
 
