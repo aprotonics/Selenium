@@ -1,7 +1,7 @@
 search_button_selector = '#static-html a.footer__link--all-products'
+filters_selector = '.ec-filters__wrap .ec-filter--offers .form-control__inline-label'
 product_prices_selector = '.grid__products .grid-product .grid-product__price-value'
-
-to_cart_button_selector = '.details-product-purchase__add-buttons > div:nth-child(2) > button.form-control__button'
+cart_button_selector = '.details-product-purchase__add-buttons > div:nth-child(2) > button.form-control__button'
 cart_icon_selector = '.float-icons__icon--cart > .ec-cart-widget > .ec-minicart'
 email_input_selector = '#ec-cart-email-input'
 checkbox_agree_selector = '#form-control__checkbox--agree'
@@ -13,7 +13,7 @@ postal_input_selector = '#ec-postal-code'
 place_order_button2_selector = '.form-control__button > .form-control__loader'
 thanks_block_selector = 'div.ec-store__confirmation-page h1.page-title__name'
 
-timeInterval = 100
+timeInterval = 500
 
 
 async function loadScript(url) {
@@ -36,25 +36,45 @@ async function main_page() {
   await search_button.click()
 }
 
-async function search_page() {
-  product_prices = await document.querySelectorAll(product_prices_selector)
-  for (i = 0; i < product_prices.length; i++) {
-    price = parseFloat(product_prices[i].textContent.split("$")[1])
-    console.log(price)
-    if (price == 0.00) {
-      product_prices[i].click()
-      break
-    } 
+function search_page() {
+  let filters
+
+  function findFilters() {
+    filters = document.querySelector(filters_selector)
+    if (filters) {
+      clearInterval(timerId)
+      findProduct()
+    }
   }
+
+  function findProduct() {  
+    product_prices = document.querySelectorAll(product_prices_selector)
+    for (i = 0; i < product_prices.length; i++) {
+      price = parseFloat(product_prices[i].textContent.split("$")[1])
+      if (price == 0.00) {
+        product_prices[i].click()
+        break
+      } 
+    }
+  }
+
+  let timerId = setInterval(findFilters, timeInterval);
 }
 
+function product_page() {
+  let cart_button
 
-async function tovar_page() {
-  to_cart_button = await document.querySelector(to_cart_button_selector)
-  await to_cart_button.click()
+  async function findCartButton() {
+    cart_button = await document.querySelector(cart_button_selector)
+    if (cart_button) {
+      clearInterval(timerId)
+      await cart_button.click()
+      cart_icon = await document.querySelector(cart_icon_selector)
+      await cart_icon.click()
+    }
+  }
 
-  cart_icon = await document.querySelector(cart_icon_selector)
-  await cart_icon.click()
+  let timerId = setInterval(findCartButton, timeInterval);
 }
 
 function cart_page() {
@@ -78,9 +98,8 @@ function cart_page() {
     await place_order_button.click()
   }
     
-  let timerId = setInterval(findEmailInput, timeInterval);  
+  let timerId = setInterval(findEmailInput, timeInterval);
 }
-
 
 function checkout_page() {
   let name_input
@@ -147,7 +166,7 @@ async function run() {
 
   await search_page()
 
-  await tovar_page()
+  await product_page()
 
   await cart_page()
 
@@ -158,7 +177,6 @@ async function run() {
 
 run()
 
-// Доделать search_page!!!
 // Добавить проверку заказа через API https://api-docs.ecwid.com/reference/get-order
 // Исправить названия на CamelCase
 
