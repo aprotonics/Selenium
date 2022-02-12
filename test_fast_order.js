@@ -15,7 +15,7 @@ postal_input_selector = '#ec-postal-code'
 place_order_button2_selector = '.form-control__button > .form-control__loader'
 thanks_block_selector = 'div.ec-store__confirmation-page h1.page-title__name'
 
-timeInterval = 50
+timeInterval = 200
 
 
 async function loadScript(url) {
@@ -329,6 +329,4 @@ async function run() {
 
 run()
 
-// Добавить проверку заказа через API https://api-docs.ecwid.com/reference/get-order
 // Исправить названия на CamelCase
-
