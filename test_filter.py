@@ -66,20 +66,15 @@ class TestFilterChrome(unittest.TestCase):
 
         time.sleep(1)
 
-        try:
-            WebDriverWait(driver, 40).until(EC.text_to_be_present_in_element((By.XPATH, '//*[contains(@class, "ec-filters__applied-count")]'), "(1)"))
-        finally:
-            try: 
-                WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "grid__products")]')))
-            finally:
-                try:
-                    WebDriverWait(driver, 40).until(EC.visibility_of_element_located((By.XPATH, '//div[contains(@class, "grid__product")]/div[1]')))
-                finally:
-                    products_filtered = driver.find_elements(By.XPATH, '//div[contains(@class, "grid__product")]/div')
-                    products_filtered_amount = len(products_filtered)
-                    print("In price ", products_filtered_amount)
+        WebDriverWait(driver, 40).until(EC.text_to_be_present_in_element((By.XPATH, '//*[contains(@class, "ec-filters__applied-count")]'), "(1)"))
+        WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "grid__products")]')))
+        WebDriverWait(driver, 40).until(EC.visibility_of_element_located((By.XPATH, '//div[contains(@class, "grid__product")]/div[1]')))
 
-                    self.assertEqual(products_in_price_number, products_filtered_amount)
+        products_filtered = driver.find_elements(By.XPATH, '//div[contains(@class, "grid__product")]/div')
+        products_filtered_amount = len(products_filtered)
+        print("In price ", products_filtered_amount)
+
+        self.assertEqual(products_in_price_number, products_filtered_amount)
     
     def test_search_in_stock(self):
         driver = self.driver
@@ -96,20 +91,15 @@ class TestFilterChrome(unittest.TestCase):
 
         time.sleep(1)
 
-        try:
-            WebDriverWait(driver, 40).until(EC.text_to_be_present_in_element((By.XPATH, '//*[contains(@class, "ec-filters__applied-count")]'), "(1)"))
-        finally:
-            try: 
-                WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "grid__products")]')))
-            finally:
-                try:
-                    WebDriverWait(driver, 40).until(EC.visibility_of_element_located((By.XPATH, '//div[contains(@class, "grid__product")]/div[1]')))
-                finally:
-                    products_filtered = driver.find_elements(By.XPATH, '//div[contains(@class, "grid__product")]/div')
-                    products_filtered_amount = len(products_filtered)
-                    print("In stock ", products_filtered_amount)
+        WebDriverWait(driver, 40).until(EC.text_to_be_present_in_element((By.XPATH, '//*[contains(@class, "ec-filters__applied-count")]'), "(1)"))
+        WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "grid__products")]')))
+        WebDriverWait(driver, 40).until(EC.visibility_of_element_located((By.XPATH, '//div[contains(@class, "grid__product")]/div[1]')))
 
-                    self.assertEqual(products_in_stock_amount, products_filtered_amount)
+        products_filtered = driver.find_elements(By.XPATH, '//div[contains(@class, "grid__product")]/div')
+        products_filtered_amount = len(products_filtered)
+        print("In stock ", products_filtered_amount)
+
+        self.assertEqual(products_in_stock_amount, products_filtered_amount)
 
     def test_search_discount(self):
         driver = self.driver
@@ -125,20 +115,14 @@ class TestFilterChrome(unittest.TestCase):
 
         time.sleep(1)
 
-        try:
-            WebDriverWait(driver, 40).until(EC.text_to_be_present_in_element((By.XPATH, '//*[contains(@class, "ec-filters__applied-count")]'), "(1)"))
-        finally:
-            try: 
-                WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "grid__products")]')))
-            finally:
-                try:
-                    WebDriverWait(driver, 40).until(EC.visibility_of_element_located((By.XPATH, '//div[contains(@class, "grid__product")]/div[1]')))
-                finally:
-                    products_filtered = driver.find_elements(By.XPATH, '//div[contains(@class, "grid__product")]/div')
-                    products_filtered_amount = len(products_filtered)
-                    print("Discount ", products_filtered_amount)
+        WebDriverWait(driver, 40).until(EC.text_to_be_present_in_element((By.XPATH, '//*[contains(@class, "ec-filters__applied-count")]'), "(1)"))
+        WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "grid__products")]')))
+        WebDriverWait(driver, 40).until(EC.visibility_of_element_located((By.XPATH, '//div[contains(@class, "grid__product")]/div[1]')))
+        products_filtered = driver.find_elements(By.XPATH, '//div[contains(@class, "grid__product")]/div')
+        products_filtered_amount = len(products_filtered)
+        print("Discount ", products_filtered_amount)
 
-                    self.assertEqual(products_with_strike_amount, products_filtered_amount)
+        self.assertEqual(products_with_strike_amount, products_filtered_amount)
 
     def tearDown(self):
         self.driver.quit()
@@ -186,20 +170,15 @@ class TestFilterFirefox(unittest.TestCase):
 
         time.sleep(1)
 
-        try:
-            WebDriverWait(driver, 40).until(EC.text_to_be_present_in_element((By.XPATH, '//*[contains(@class, "ec-filters__applied-count")]'), "(1)"))
-        finally:
-            try: 
-                WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "grid__products")]')))
-            finally:
-                try:
-                    WebDriverWait(driver, 40).until(EC.visibility_of_element_located((By.XPATH, '//div[contains(@class, "grid__product")]/div[1]')))
-                finally:
-                    products_filtered = driver.find_elements(By.XPATH, '//div[contains(@class, "grid__product")]/div')
-                    products_filtered_amount = len(products_filtered)
-                    print("In price ", products_filtered_amount)
+        WebDriverWait(driver, 40).until(EC.text_to_be_present_in_element((By.XPATH, '//*[contains(@class, "ec-filters__applied-count")]'), "(1)"))
+        WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "grid__products")]')))
+        WebDriverWait(driver, 40).until(EC.visibility_of_element_located((By.XPATH, '//div[contains(@class, "grid__product")]/div[1]')))
 
-                    self.assertEqual(products_in_price_number, products_filtered_amount)
+        products_filtered = driver.find_elements(By.XPATH, '//div[contains(@class, "grid__product")]/div')
+        products_filtered_amount = len(products_filtered)
+        print("In price ", products_filtered_amount)
+
+        self.assertEqual(products_in_price_number, products_filtered_amount)
     
     def test_search_in_stock(self):
         driver = self.driver
@@ -216,20 +195,15 @@ class TestFilterFirefox(unittest.TestCase):
 
         time.sleep(1)
 
-        try:
-            WebDriverWait(driver, 40).until(EC.text_to_be_present_in_element((By.XPATH, '//*[contains(@class, "ec-filters__applied-count")]'), "(1)"))
-        finally:
-            try: 
-                WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "grid__products")]')))
-            finally:
-                try:
-                    WebDriverWait(driver, 40).until(EC.visibility_of_element_located((By.XPATH, '//div[contains(@class, "grid__product")]/div[1]')))
-                finally:
-                    products_filtered = driver.find_elements(By.XPATH, '//div[contains(@class, "grid__product")]/div')
-                    products_filtered_amount = len(products_filtered)
-                    print("In stock ", products_filtered_amount)
+        WebDriverWait(driver, 40).until(EC.text_to_be_present_in_element((By.XPATH, '//*[contains(@class, "ec-filters__applied-count")]'), "(1)"))
+        WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "grid__products")]')))
+        WebDriverWait(driver, 40).until(EC.visibility_of_element_located((By.XPATH, '//div[contains(@class, "grid__product")]/div[1]')))
 
-                    self.assertEqual(products_in_stock_amount, products_filtered_amount)
+        products_filtered = driver.find_elements(By.XPATH, '//div[contains(@class, "grid__product")]/div')
+        products_filtered_amount = len(products_filtered)
+        print("In stock ", products_filtered_amount)
+
+        self.assertEqual(products_in_stock_amount, products_filtered_amount)
 
     def test_search_discount(self):
         driver = self.driver
@@ -245,20 +219,14 @@ class TestFilterFirefox(unittest.TestCase):
 
         time.sleep(1)
 
-        try:
-            WebDriverWait(driver, 40).until(EC.text_to_be_present_in_element((By.XPATH, '//*[contains(@class, "ec-filters__applied-count")]'), "(1)"))
-        finally:
-            try: 
-                WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "grid__products")]')))
-            finally:
-                try:
-                    WebDriverWait(driver, 40).until(EC.visibility_of_element_located((By.XPATH, '//div[contains(@class, "grid__product")]/div[1]')))
-                finally:
-                    products_filtered = driver.find_elements(By.XPATH, '//div[contains(@class, "grid__product")]/div')
-                    products_filtered_amount = len(products_filtered)
-                    print("Discount ", products_filtered_amount)
+        WebDriverWait(driver, 40).until(EC.text_to_be_present_in_element((By.XPATH, '//*[contains(@class, "ec-filters__applied-count")]'), "(1)"))
+        WebDriverWait(driver, 40).until(EC.presence_of_element_located((By.XPATH, '//div[contains(@class, "grid__products")]')))
+        WebDriverWait(driver, 40).until(EC.visibility_of_element_located((By.XPATH, '//div[contains(@class, "grid__product")]/div[1]')))
+        products_filtered = driver.find_elements(By.XPATH, '//div[contains(@class, "grid__product")]/div')
+        products_filtered_amount = len(products_filtered)
+        print("Discount ", products_filtered_amount)
 
-                    self.assertEqual(products_with_strike_amount, products_filtered_amount)
+        self.assertEqual(products_with_strike_amount, products_filtered_amount)
 
     def tearDown(self):
         self.driver.quit()
