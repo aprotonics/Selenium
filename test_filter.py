@@ -1,4 +1,3 @@
-from pages.locators import *
 from pages.filter_page import FilterPage
 
 

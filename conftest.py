@@ -10,13 +10,13 @@ from webdriver_manager.utils import ChromeType
 
 
 @pytest.fixture(scope='function')
-def driver(request):
+def driver():
     browser_name = 'chrome'
     driver = None
     if browser_name == 'chrome':
         options = webdriver.ChromeOptions()
         options.add_argument("--start-maximized")
-        options.add_argument("--headless")
+        # options.add_argument("--headless")
         options.add_argument('--ignore-certificate-errors')
         options.add_argument("--remote-debugging-port=9222")
 
