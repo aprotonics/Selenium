@@ -7,7 +7,7 @@ class OrderConfirmPage(BasePage):
         super(OrderConfirmPage, self).__init__(*args, **kwargs)
 
     def should_be_thanks_for_order_text(self):
-        thanksBlock = self.driver.find_element(*thanksBlockSelector)
+        thanksBlock = self.driver.find_element(*thanks_block_selector)
         thanksText = thanksBlock.text
 
         assert 'Спасибо за заказ' in thanksText

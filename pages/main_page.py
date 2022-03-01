@@ -7,5 +7,5 @@ class MainPage(BasePage):
         super(MainPage, self).__init__(*args, **kwargs)
 
     def go_to_search_page(self):
-        search_button = self.driver.find_element(*searchButtonSelector)
+        search_button = self.driver.find_element(*search_button_selector)
         search_button.click()

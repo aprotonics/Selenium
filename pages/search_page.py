@@ -12,8 +12,8 @@ class SearchPage(BasePage):
         self.product_price = None
     
     def find_product(self):
-        filters = self.driver.find_elements(*filtersSelector)
-        product_prices = self.driver.find_elements(*productPricesSelector)
+        filters = self.driver.find_elements(*filters_selector)
+        product_prices = self.driver.find_elements(*product_prices_selector)
         for price in product_prices:
             price_value = float(price.text.split('$')[1])
             if price_value == 0:
