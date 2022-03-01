@@ -19,6 +19,7 @@ def driver():
         # options.add_argument("--headless")
         options.add_argument('--ignore-certificate-errors')
         options.add_argument("--remote-debugging-port=9222")
+        options.add_argument("--start-in-incognito")
 
         # For Chrome
         # service=Service(ChromeDriverManager().install())
