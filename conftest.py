@@ -6,7 +6,7 @@ from webdriver_manager.firefox import GeckoDriverManager
 from webdriver_manager.chrome import ChromeDriverManager
 
 # For Chromium
-from webdriver_manager.utils import ChromeType
+from webdriver_manager.core.os_manager import ChromeType
 
 
 @pytest.fixture(scope='function')
