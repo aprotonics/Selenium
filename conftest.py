@@ -13,6 +13,7 @@ from webdriver_manager.core.os_manager import ChromeType
 def driver():
     browser_name = 'chrome'
     driver = None
+    PROXY = '124.197.21.223:3128'
     if browser_name == 'chrome':
         options = webdriver.ChromeOptions()
         options.add_argument("--start-maximized")
@@ -20,9 +21,10 @@ def driver():
         options.add_argument('--ignore-certificate-errors')
         options.add_argument("--remote-debugging-port=9222")
         options.add_argument("--start-in-incognito")
+        options.add_argument(f'--proxy-server={PROXY}')
 
         # For Chrome
-        # service=Service(ChromeDriverManager().install())
+        service=Service(ChromeDriverManager().install())
 
         # For Chromium
         service=Service(ChromeDriverManager(chrome_type=ChromeType.CHROMIUM).install())
